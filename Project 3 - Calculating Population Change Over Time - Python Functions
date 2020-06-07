@@ -1,0 +1,34 @@
+#You work at the UN in urban planning and are interested in tracking population growth across major metropolitan regions. You are hoping that by looking at historical population numbers 
+#that you can predict future growth and help your team make decisions about resourcing.
+#Use what you’ve learned about the basics of Python to calculate the population growth of Istanbul and print out a short report.
+
+city_name = "Istanbul, Turkey"
+pop_1927 = 691000
+pop_2017 = 15029231
+pop_1950 = 983000
+pop_2000 = 8831800
+
+#calculate the annual percentage growth rate. 
+#The annual percentage growth rate is the amount in which the population changes each year during a certain period.
+pop_change = pop_2017 - pop_1927
+percentage_gr = (pop_change / pop_1927) * 100
+annual_gr = percentage_gr / (2017 -1927)
+print(annual_gr)
+
+#Let’s turn it into a function called population_growth. First, start by defining the function.
+
+def population_growth (year_one, year_two, population_one, population_two):
+  pop_change = population_two - population_one
+  percentage_gr = (pop_change / population_one) * 100
+  growth_rate = percentage_gr / (year_two -year_one)
+  return growth_rate
+  
+
+set_one = population_growth (1927,2017,pop_1927,pop_2017)
+print(set_one)
+
+set_two = population_growth (1950,2000,pop_1950,pop_2000)
+print(set_two)
+
+report = population_growth (1927,2017,pop_1927,pop_2017)
+print("The population growth percentage from 1927 to 2017 in Istanbul is " +str(report))
